@@ -1,0 +1,263 @@
+/* Style de base */
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #e60012; /* <-- Le ROUGE NINTENDO ! */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Ombre un peu plus forte */
+}
+
+/* Le titre H1 (dans le header) devient blanc */
+header h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Le titre H2 (sur la page) reste noir */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 2rem;
+}
+h2 {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+main {
+    padding: 0 2rem;
+}
+
+/* --- LA GRILLE DE PRODUITS (La magie) --- */
+.product-grid-container {
+    display: grid;
+    /* * C'est la ligne la plus importante.
+     * 1. 'repeat(auto-fit, ...)' : Crée autant de colonnes que possible.
+     * 2. 'minmax(280px, 1fr)' : Chaque colonne fait au moins 280px,
+     * mais peut grandir (1fr) pour remplir l'espace.
+     * C'est ce qui le rend "responsive" (adaptatif).
+     */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; /* L'espace entre les cartes */
+    margin-top: 1rem;
+}
+
+/* --- LA CARTE PRODUIT (Ton modèle) --- */
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden; /* Garde l'image dans les coins arrondis */
+    display: flex;
+    flex-direction: column; /* Empile l'image, le texte, le bouton */
+    transition: transform 0.2s ease;
+}
+.product-card:hover {
+    transform: translateY(-5px); /* Léger effet au survol */
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px; /* Hauteur fixe pour l'image */
+    object-fit: cover; /* Recadre l'image sans la déformer */
+}
+
+.product-info {
+    padding: 1rem;
+    flex-grow: 1; /* Pousse le prix/bouton vers le bas */
+}
+
+.product-info h3 { /* Le titre du produit */
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.product-info p { /* La description (optionnel) */
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.add-to-cart-btn {
+    background-color: #222; /* <-- Devient NOIR */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.add-to-cart-btn:hover {
+    background-color: #555; /* <-- Devient GRIS FONCÉ */
+}
+
+#cart-link-button {
+    background-color: #222; /* <-- Devient NOIR */
+    color: white;
+    border: 2px solid #222; /* Bordure solide */
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+#cart-link-button:hover {
+    background-color: #fff; /* <-- Fond blanc au survol */
+    color: #222; /* <-- Texte noir au survol */
+}
+
+/* --- NOUVELLE NAVIGATION PAR CATÉGORIE --- */
+.category-nav {
+    display: flex; /* Aligne les icônes en ligne */
+    gap: 2rem; /* Espace entre les icônes */
+}
+
+.category-link {
+    display: flex; /* Aligne l'icône et le texte */
+    flex-direction: column; /* L'un sur l'autre */
+    align-items: center; /* Centre horizontalement */
+    text-decoration: none;
+    color: white; /* Texte en blanc */
+    font-weight: bold;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+.category-link:hover {
+    opacity: 1; /* Pleine opacité au survol */
+}
+
+.category-link img {
+    width: 32px; /* Taille de l'icône */
+    height: 32px;
+    margin-bottom: 5px;
+    /* Si tes PNG sont noirs, tu peux les inverser en blanc ! */
+    /* filter: invert(1); */
+}
+
+/* NOUVELLE RÈGLE POUR ALIGNER LES ÉLÉMENTS DE DROITE */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem; /* Espace entre les icônes et le bouton panier */
+}
+
+/* Style pour la nouvelle navigation de la page catégorie */
+.header-navigation {
+    display: flex;
+    gap: 1.5rem; /* Espace entre les deux liens */
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+.back-link:hover {
+    opacity: 1;
+}
+
+/* On s'assure que l'ancien style n'interfère pas */
+.header-navigation .category-link {
+    flex-direction: row; /* Met le texte à côté, pas en colonne */
+}
+
+/* Style pour la nouvelle ligne de couleur */
+.category-color-bar {
+    width: 100%;
+    height: 10px; /* La hauteur de ta "ligne de couleur" */
+}
+
+/* Style pour le texte de la carte catégorie */
+.category-card-info {
+    /* On veut que le texte soit centré verticalement */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* On lui donne une hauteur fixe pour que toutes les cartes soient alignées */
+    height: 150px;
+}
+
+/* On s'assure que le H3 des catégories est bien centré */
+.category-card-info h3 {
+     margin: 0;
+}
+
+/* Enlève le soulignement bleu moche des liens de la carte */
+.product-image-link, .product-title-link {
+    text-decoration: none;
+    color: inherit; /* Hérite la couleur du parent */
+}
+
+.product-detail-layout {
+    display: flex;
+    gap: 2rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+.product-detail-image {
+    flex-basis: 50%; /* L'image prend 50% de la largeur */
+}
+.product-detail-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+.product-detail-info {
+    flex-basis: 50%; /* Les infos prennent 50% */
+}
+.product-detail-info h2 {
+    text-align: left;
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+.product-detail-info .product-price {
+    font-size: 1.8rem;
+    color: #e60012; /* Rouge Nintendo */
+}
+.product-detail-info .product-ratings {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+}
+.product-detail-info .product-long-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+}
+.product-detail-info .add-to-cart-btn {
+    width: 100%; /* Le bouton prend toute la largeur */
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+
+

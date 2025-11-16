@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Switch 2</title>
+    <link rel="stylesheet" href="css/store.css">
+</head>
+<body>
+
+<header>
+    <h1>Boutique Nintendo</h1>
+
+    <div class="header-right">
+        <nav class="category-nav">
+            <a href="category.html?name=Consoles" class="category-link">
+                <img src="/images/consoles.jpg" alt="Icône Consoles">
+                <span>Consoles</span>
+            </a>
+            <a href="category.html?name=Accessoires" class="category-link">
+                <img src="/images/accesories.png" alt="Icône Accessoires">
+                <span>Accessoires</span>
+            </a>
+            <a href="games.html" class="category-link">
+                <img src="/images/games.jpg" alt="Icône Jeux">
+                <span>Jeux</span>
+            </a>
+        </nav>
+
+        <a href="cart.html" id="cart-link-button">
+            Panier (0)
+        </a>
+    </div> </header>
+
+<main>
+    <h2>Derniers Produits</h2>
+
+    <div id="product-grid" class="product-grid-container">
+    </div>
+</main>
+
+<script src="js/store.js"></script>
+</body>
+</html>

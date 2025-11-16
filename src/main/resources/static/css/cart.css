@@ -1,0 +1,63 @@
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    padding: 1rem 2rem;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+}
+.back-to-store-btn {
+    text-decoration: none;
+    background-color: #eee;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Le style de notre tableau de panier */
+#cart-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+#cart-container th, #cart-container td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+#cart-container th {
+    background-color: #f0f0f0;
+}
+#cart-container td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+/* Le résumé de la commande */
+#cart-summary {
+    margin-top: 2rem;
+    text-align: right;
+}
+#cart-total {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Style pour les mini-images dans le tableau */
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover; /* Recadre l'image */
+    margin-right: 10px;
+    vertical-align: middle; /* Aligne l'image avec le texte à côté */
+}
